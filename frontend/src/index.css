@@ -1,0 +1,140 @@
+:root {
+  /* Define your custom color variables for a single color scheme */
+  --primary-color: #ff6f61;       /* A warm coral */
+  --secondary-color: #6b5b95;     /* Soft purple */
+  --accent-color: #88b04b;        /* Vibrant green */
+  --background-color: #fff4e6;    /* Warm cream background */
+  --text-color: #333333;          /* Dark text for contrast */
+  --link-color: #ff6f61;          /* Coral links */
+  --link-hover: #ff8578;          /* Lighter coral on hover */
+  --nav-bg: #6b5b95;              /* Use secondary color for nav background */
+  --container-bg: #ffffff;        /* White background for containers/cards */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Body Styles */
+body {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* Link Styles */
+a {
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Navigation Bar */
+.navbar {
+  width: calc(100% - 40px);  /* Full width minus margins */
+  margin: 10px 20px;         /* 10px vertical, 20px horizontal */
+  background-color: var(--nav-bg);
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.navbar a {
+  color: var(--container-bg);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Container for Main Content */
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 40px auto;  /* Center horizontally with vertical spacing */
+  padding: 20px;
+  background-color: var(--container-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--secondary-color);
+}
+
+/* Card Component */
+.card {
+  background-color: var(--container-bg);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Button Styling */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: var(--container-bg);
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.3s;
+}
+button:hover {
+  background-color: var(--link-hover);
+  border-color: var(--link-hover);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Preformatted Text (for code blocks or JSON display) */
+pre {
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  overflow: auto;
+  color: var(--text-color);
+}
