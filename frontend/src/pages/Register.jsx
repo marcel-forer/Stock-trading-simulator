@@ -23,9 +23,9 @@ function Register() {
   };
 
   return (
-    <div className="container">
-      <h1 className="page-title">Register</h1>
-      <div className="card">
+    <div className="auth-container">
+      <div className="auth-card">
+        <h1 className="page-title">Register</h1>
         <form onSubmit={handleRegister}>
           <input 
             type="text" 

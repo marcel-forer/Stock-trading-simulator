@@ -1,126 +1,119 @@
 :root {
-  /* Define your custom color variables for a single color scheme */
-  --primary-color: #ff6f61;       /* A warm coral */
-  --secondary-color: #6b5b95;     /* Soft purple */
-  --accent-color: #88b04b;        /* Vibrant green */
-  --background-color: #fff4e6;    /* Warm cream background */
-  --text-color: #333333;          /* Dark text for contrast */
-  --link-color: #ff6f61;          /* Coral links */
-  --link-hover: #ff8578;          /* Lighter coral on hover */
-  --nav-bg: #6b5b95;              /* Use secondary color for nav background */
-  --container-bg: #ffffff;        /* White background for containers/cards */
+  /* Modern Color Palette */
+  --primary-color: #4CAF50;  /* Green - Professional & Trustworthy */
+  --secondary-color: #3D5A80; /* Deep Blue - Stability */
+  --accent-color: #EE6C4D;    /* Coral - Contrast & Engagement */
+  --background-color: #F8F9FA; /* Light Grey - Clean Look */
+  --text-color: #333;         /* Dark text for readability */
+  --container-bg: #FFFFFF;    /* White cards for contrast */
+  --button-hover: #45A049;    /* Slightly darker green */
+  --navbar-height: 100px;      /* Defined navbar height */
 }
 
+/* Reset & Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Global Body Styles */
+/* Body */
 body {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   min-height: 100vh;
-}
-
-/* Link Styles */
-a {
-  font-weight: 500;
-  color: var(--link-color);
-  text-decoration: inherit;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: var(--link-hover);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: var(--navbar-height); /* Ensure content starts below navbar */
 }
 
 /* Navigation Bar */
 .navbar {
-  width: calc(100% - 40px);  /* Full width minus margins */
-  margin: 10px 20px;         /* 10px vertical, 20px horizontal */
-  background-color: var(--nav-bg);
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  width: 100vw; /* Ensures it takes the full viewport width */
+  max-width: 100%; /* Prevents any unwanted constraints */
+  
+  background-color: var(--secondary-color);
+  padding: 25px 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
+
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
   justify-content: center;
-  align-items: center;
+  gap: 20px;
 }
+
 .navbar a {
-  color: var(--container-bg);
+  color: #fff;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  transition: color 0.3s;
 }
 
-/* Container for Main Content */
-.container {
-  max-width: 900px;
-  width: 100%;
-  margin: 40px auto;  /* Center horizontally with vertical spacing */
-  padding: 20px;
-  background-color: var(--container-bg);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.navbar a:hover {
+  color: var(--accent-color);
 }
 
-/* Page Title */
+/* Ensure Page Content Does Not Overlap Navbar */
 .page-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+  font-size: 2.2rem;
   text-align: center;
-  color: var(--secondary-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
 }
 
-/* Card Component */
+/* Card */
 .card {
   background-color: var(--container-bg);
   border-radius: 8px;
   padding: 20px;
-  margin-bottom: 20px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 600px;
-}
-
-/* Button Styling */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--primary-color);
-  color: var(--container-bg);
-  cursor: pointer;
-  transition: border-color 0.25s, background-color 0.3s;
-}
-button:hover {
-  background-color: var(--link-hover);
-  border-color: var(--link-hover);
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  min-height: 300px;
+  margin-top: calc(var(--navbar-height) + 20px); /* Push cards down */
 }
 
 /* Form Elements */
-input[type="text"],
-input[type="password"],
-input[type="number"],
-select {
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: var(--button-hover);
 }
 
 /* Error Message */
@@ -130,11 +123,65 @@ select {
   font-weight: bold;
 }
 
-/* Preformatted Text (for code blocks or JSON display) */
-pre {
-  background-color: #f1f1f1;
-  padding: 15px;
-  border-radius: 8px;
-  overflow: auto;
+/* Portfolio Page */
+.no-holdings {
+  text-align: center;
+  font-size: 18px;
   color: var(--text-color);
+}
+
+/* Portfolio List */
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+}
+
+.portfolio-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: var(--container-bg);
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Stock Chart */
+.stock-chart {
+  flex: 1;
+  min-width: 300px;
+  height: 450px;
+  background: var(--container-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stock-chart h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Authentication Pages (Login & Register) */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+.auth-card {
+  background: var(--container-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
